@@ -1,5 +1,4 @@
 #TESTING THE DIFFERENCE BETWEEN MY TASTE IN DOG MOVIES VS MY TASTE IN ALL MOVIES
-#TODO: remove dog data from all data (forgot!)
 
 dogdata <- read.csv(file="dogratings.csv", header=TRUE)
 otherdata <- read.csv(file="allbutdogratings.csv", header=TRUE)
