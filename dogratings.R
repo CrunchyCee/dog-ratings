@@ -13,8 +13,8 @@ summary(otherdata$Rating)
 
 #graphical comparison of data
 par(mfrow=c(1,2))
-hist(dogdata$Rating)
-hist(otherdata$Rating)
+barplot(table(dogdata$Rating))
+barplot(table(otherdata$Rating))
 boxplot(dogdata$Rating, otherdata$Rating, names=c("Dog Ratings", "Other Ratings"),
         main="Movie Ratings", ylab="Ratings")
 
