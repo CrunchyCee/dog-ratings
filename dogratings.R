@@ -8,17 +8,20 @@ summary(dogdata$Rating)
 summary(otherdata$Rating)
 
 #RESULTS:
-#dogdata: Median = 3, Mean = 2.718, IQR = 1.5
-#otherdata: Meadian = 3.5, Mean = 3.307, IQR = 1
+#dogdata: Median = 3, Mean = 2.718, IQR = 1.5, n = 39
+#otherdata: Median = 3.5, Mean = 3.307, IQR = 1, n = 1264
 
-#boxplot comparison of data
+#graphical comparison of data
+par(mfrow=c(1,2))
+hist(dogdata$Rating)
+hist(otherdata$Rating)
 boxplot(dogdata$Rating, otherdata$Rating, names=c("Dog Ratings", "Other Ratings"),
         main="Movie Ratings", ylab="Ratings")
 
 #independent 2-group Mann-Whitney U test
-wilcox.test(dogdata$Rating, otherdata$Rating)
+wilcox.test(dogdata$Rating, otherdata$Rating, alternative="less")
 
 #RESULTS:
-#pval = 0.0008109
+#W = 17034, pval = 0.0008109
 #There is enough evidence to support the fact that the two distributions are not equal,
-#and that taste in dog movies differs from taste in non-dog movies
+#and that the median ranking of dog movies is less than the median ranking of non-dog movies
