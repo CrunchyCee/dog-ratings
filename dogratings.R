@@ -19,9 +19,8 @@ boxplot(dogdata$Rating, otherdata$Rating, names=c("Dog Ratings", "Other Ratings"
         main="Movie Ratings", ylab="Ratings")
 
 #independent 2-group Mann-Whitney U test
-wilcox.test(dogdata$Rating, otherdata$Rating, alternative="less")
+wilcox.test(dogdata$Rating, otherdata$Rating)
 
 #RESULTS:
 #W = 17034, pval = 0.0008109
-#There is enough evidence to support the fact that the two distributions are not equal,
-#and that the median ranking of dog movies is less than the median ranking of non-dog movies
+#There is enough evidence to support the fact that the two distributions are not equal
