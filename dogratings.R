@@ -18,9 +18,9 @@ barplot(table(otherdata$Rating))
 boxplot(dogdata$Rating, otherdata$Rating, names=c("Dog Ratings", "Other Ratings"),
         main="Movie Ratings", ylab="Ratings")
 
-#independent 2-group Mann-Whitney U test
-wilcox.test(dogdata$Rating, otherdata$Rating)
+#independent 2-group t-test
+t.test(dogdata$Rating, otherdata$Rating, var.equal=TRUE, alternative="less")
 
 #RESULTS:
-#W = 17034, pval = 0.0008109
-#There is enough evidence to support the fact that the two distributions are not equal
+#t = -3.9962, df = 1301, p-value = 3.399e-05
+#alternative hypothesis: true difference in means is less than 0
